@@ -32,3 +32,22 @@ public:
 
         nodeBaru->noMhs = nim;
 
+        if (START == NULL || nim <= START->noMhs)
+        {
+            if (START != NULL && nim == START->noMhs)
+            {
+                cout << "\nDuplicate roll numbers not allowed" << endl;
+                return;
+            }
+
+            nodeBaru->next = START;
+
+            if (START != NULL)
+                START->prev = nodeBaru;
+
+            nodeBaru->prev = NULL;
+
+            START = nodeBaru;
+            return;
+        }
+
