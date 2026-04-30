@@ -115,3 +115,22 @@ public:
         cout << "\nRecord with roll number " << rollNo << " deleted" << endl;
     }
 
+    void traverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        Node *currentNode = START;
+
+        cout << "\nRecords in ascending order of roll number are:\n";
+        while (currentNode != NULL)
+        {
+            cout << currentNode->noMhs << " ";
+            currentNode = currentNode->next;
+        }
+        cout << endl;
+    }
+
