@@ -134,3 +134,32 @@ public:
         cout << endl;
     }
 
+    void reverseTraverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        Node *currentNode = START;
+        int i = 1;
+
+        while (currentNode->next != NULL)
+        {
+            currentNode = currentNode->next;
+            i++;
+        }
+
+        cout << "\nRecords in descending order of roll number are:\n";
+
+        while (currentNode != NULL)
+        {
+            cout << i << ". " << currentNode->noMhs << " ";
+            currentNode = currentNode->prev;
+            i--;
+        }
+
+        cout << endl;
+    }
+
